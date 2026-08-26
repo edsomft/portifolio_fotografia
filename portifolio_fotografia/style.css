@@ -1,0 +1,86 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =========================================
+   CSS VARIABLES — paleta dark fosca
+========================================= */
+:root {
+  /* cores */
+  --color-bg: #121212;        /* fundo principal, preto fosco */
+  --color-surface: #1b1b1b;   /* cards, blocos elevados */
+  --color-border: #2c2c2c;    /* bordas sutis */
+  --color-text: #e6e6e6;      /* texto principal */
+  --color-text-muted: #9a9a9a;/* texto secundário */
+  --color-accent: #c98b4a;    /* âmbar fosco, destaque */
+
+  /* raio de borda */
+  --radius-sm: 6px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+
+  /* espaçamentos */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  /* tipografia */
+  --font-base: 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* =========================================
+   BASE
+========================================= */
+body {
+  font-family: var(--font-base);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: var(--space-md);
+}
+
+h3 {
+  font-size: 1.1rem;
+}
+
+em {
+  color: var(--color-accent);
+  font-style: normal;
+}
+
+p {
+  color: var(--color-text-muted);
+}
