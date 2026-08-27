@@ -26,12 +26,12 @@ ul {
 ========================================= */
 :root {
   /* cores */
-  --color-bg: #121212;        /* fundo principal, preto fosco */
-  --color-surface: #1b1b1b;   /* cards, blocos elevados */
-  --color-border: #2c2c2c;    /* bordas sutis */
-  --color-text: #e6e6e6;      /* texto principal */
-  --color-text-muted: #9a9a9a;/* texto secundário */
-  --color-accent: #c98b4a;    /* âmbar fosco, destaque */
+  --color-bg: #121212;      
+  --color-surface: #1b1b1b;   
+  --color-border: #2c2c2c;   
+  --color-text: #e6e6e6;     
+  --color-text-muted: #9a9a9a;
+  --color-accent: #c98b4a;    
 
   /* raio de borda */
   --radius-sm: 6px;
