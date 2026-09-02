@@ -28,10 +28,15 @@
 
     <section class="about">
       <h2>Sobre o estúdio</h2>
+      <img src="img/fotografo.jpg" alt="Retrato do fotógrafo em estúdio" class="about-img">
       <p>
         O Nyx Studio nasceu da vontade de fotografar o que não se vê à primeira vista:
         texturas, pausas, o instante antes do movimento. Trabalhamos com retrato,
-        arquitetura e still life.
+        arquitetura e still life, sempre buscando um olhar mais silencioso sobre
+        cada cena. Cada projeto começa com uma conversa: entender a luz do lugar,
+        o propósito das imagens e o que precisa ser dito sem palavras. Do estúdio
+        ao ambiente externo, mantemos a mesma linguagem visual — sombras marcadas,
+        paleta contida e composições que respiram.
       </p>
     </section>
 
@@ -53,17 +58,73 @@
       </div>
     </section>
 
-    <section class="gallery">
+    <section class="gallery" id="gallery">
       <h2>Galeria</h2>
       <div class="gallery-grid">
-        <figure class="gallery-item"><img src="img/preto_banco.jpg" alt="Retrato em preto e branco"></figure>
-        <figure class="gallery-item"><img src="img/fa_arqui.jpg" alt="Fachada arquitetônica"></figure>
-        <figure class="gallery-item"><img src="img/still_life.jpg" alt="Composição still life"></figure>
-        <figure class="gallery-item"><img src="img/retrato_amb.jpg" alt="Retrato ambientado"></figure>
-        <figure class="gallery-item"><img src="img/detalhes_arq.jpg" alt="Detalhe arquitetônico"></figure>
-        <figure class="gallery-item"><img src="img/luz_baixa.jpg" alt="Still life em luz baixa"></figure>
+        <a href="#modal1" class="gallery-item">
+          <img src="img/preto_banco.jpg" alt="Retrato em preto e branco">
+        </a>
+        <a href="#modal2" class="gallery-item">
+          <img src="img/fa_arqui.jpg" alt="Fachada arquitetônica">
+        </a>
+        <a href="#modal3" class="gallery-item">
+          <img src="img/still_life.jpg" alt="Composição still life">
+        </a>
+        <a href="#modal4" class="gallery-item">
+          <img src="img/retrato_amb.jpg" alt="Retrato ambientado">
+        </a>
+        <a href="#modal5" class="gallery-item">
+          <img src="img/detalhes_arq.jpg" alt="Detalhe arquitetônico">
+        </a>
+        <a href="#modal6" class="gallery-item">
+          <img src="img/luz_baixa.jpg" alt="Still life em luz baixa">
+        </a>
       </div>
     </section>
+
+    <!-- Modais de imagem (técnica :target, sem JS) -->
+    <div id="modal1" class="modal">
+      <a href="#gallery" class="modal__overlay" aria-label="Fechar"></a>
+      <div class="modal__content">
+        <img src="img/preto_banco.jpg" alt="Retrato em preto e branco">
+        <a href="#gallery" class="modal__close" aria-label="Fechar">&times;</a>
+      </div>
+    </div>
+    <div id="modal2" class="modal">
+      <a href="#gallery" class="modal__overlay" aria-label="Fechar"></a>
+      <div class="modal__content">
+        <img src="img/fa_arqui.jpg" alt="Fachada arquitetônica">
+        <a href="#gallery" class="modal__close" aria-label="Fechar">&times;</a>
+      </div>
+    </div>
+    <div id="modal3" class="modal">
+      <a href="#gallery" class="modal__overlay" aria-label="Fechar"></a>
+      <div class="modal__content">
+        <img src="img/still_life.jpg" alt="Composição still life">
+        <a href="#gallery" class="modal__close" aria-label="Fechar">&times;</a>
+      </div>
+    </div>
+    <div id="modal4" class="modal">
+      <a href="#gallery" class="modal__overlay" aria-label="Fechar"></a>
+      <div class="modal__content">
+        <img src="img/retrato_amb.jpg" alt="Retrato ambientado">
+        <a href="#gallery" class="modal__close" aria-label="Fechar">&times;</a>
+      </div>
+    </div>
+    <div id="modal5" class="modal">
+      <a href="#gallery" class="modal__overlay" aria-label="Fechar"></a>
+      <div class="modal__content">
+        <img src="img/detalhes_arq.jpg" alt="Detalhe arquitetônico">
+        <a href="#gallery" class="modal__close" aria-label="Fechar">&times;</a>
+      </div>
+    </div>
+    <div id="modal6" class="modal">
+      <a href="#gallery" class="modal__overlay" aria-label="Fechar"></a>
+      <div class="modal__content">
+        <img src="img/luz_baixa.jpg" alt="Still life em luz baixa">
+        <a href="#gallery" class="modal__close" aria-label="Fechar">&times;</a>
+      </div>
+    </div>
 
   </main>
 
