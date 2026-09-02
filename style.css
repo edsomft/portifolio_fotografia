@@ -169,3 +169,396 @@ p {
 .hero p {
   font-size: 1.1rem;
 }
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero h1,
+.hero p {
+  animation: fadeInUp 0.8s ease both;
+}
+
+.hero p {
+  animation-delay: 0.2s;
+}
+
+/* =========================================
+   SEÇÕES GERAIS (about, cards, gallery)
+========================================= */
+section {
+  padding: var(--space-lg) var(--space-md);
+}
+
+section h2 {
+  text-align: center;
+}
+
+.about {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-img {
+  width: 180px;
+  border-radius: var(--radius-md);
+  float: left;
+  margin: 0 var(--space-md) var(--space-sm) 0;
+}
+
+.about p {
+  text-align: left;
+}
+
+.about::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* =========================================
+   CARDS — Flexbox
+========================================= */
+.cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  justify-content: center;
+}
+
+.card {
+  flex: 1 1 260px;
+  max-width: 320px;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-accent);
+}
+
+.card h3 {
+  margin-bottom: var(--space-xs);
+  color: var(--color-accent);
+}
+
+/* =========================================
+   GALERIA — CSS Grid
+========================================= */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+/* =========================================
+   RESPONSIVIDADE — Media Queries
+========================================= */
+
+/* Tablet (até 1024px) */
+@media (max-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile (até 640px) */
+@media (max-width: 640px) {
+  .site-header {
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding: var(--space-sm);
+  }
+
+  .main-nav ul {
+    gap: var(--space-sm);
+  }
+
+  .hero {
+    min-height: 50vh;
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  section {
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .cards-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Recurso CSS3: usuário que prefere menos movimento (acessibilidade) */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* =========================================
+   IMAGE MODAL — técnica :target (sem JS)
+========================================= */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal:target {
+  display: flex;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.modal__content {
+  position: relative;
+  z-index: 1;
+  max-width: 90vw;
+  max-height: 85vh;
+}
+
+.modal__content img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.modal__close {
+  position: absolute;
+  top: -1.5rem;
+  right: -1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.modal__close:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* =========================================
+   PÁGINA: DETALHES/TRABALHOS
+========================================= */
+.page-header {
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+  text-align: center;
+}
+ 
+.page-header p {
+  max-width: 500px;
+  margin: 0 auto;
+}
+ 
+.project-detail {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg) var(--space-md);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+ 
+.project-detail--reverse {
+  flex-direction: row-reverse;
+}
+ 
+.project-detail__text {
+  flex: 1 1 320px;
+}
+ 
+.project-detail__tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: var(--space-sm);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+ 
+.project-detail__text h2 {
+  margin-bottom: var(--space-sm);
+}
+ 
+.project-detail__grid {
+  flex: 1 1 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+ 
+.project-detail__grid img {
+  border-radius: var(--radius-md);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+ 
+@media (max-width: 768px) {
+  .project-detail,
+  .project-detail--reverse {
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   PÁGINA: CONTATO
+========================================= */
+.contact {
+  display: flex;
+  gap: var(--space-lg);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-md);
+  align-items: flex-start;
+}
+ 
+.contact-form {
+  flex: 2 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+}
+ 
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+ 
+.form-group label {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+ 
+.form-group input,
+.form-group select,
+.form-group textarea {
+  font-family: var(--font-base);
+  font-size: 1rem;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.9rem;
+  transition: border-color 0.3s ease;
+}
+ 
+.form-group textarea {
+  resize: vertical;
+}
+ 
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+ 
+.btn-submit {
+  align-self: flex-start;
+  margin-top: var(--space-xs);
+  padding: 0.8rem 1.8rem;
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+ 
+.btn-submit:hover {
+  opacity: 0.85;
+}
+ 
+.contact-info {
+  flex: 1 1 220px;
+  padding: var(--space-md);
+}
+ 
+.contact-info h2 {
+  text-align: left;
+  font-size: 1.1rem;
+}
+ 
+.contact-info p {
+  margin-bottom: var(--space-xs);
+}
+ 
+.contact-info strong {
+  color: var(--color-text);
+}
+ 
+@media (max-width: 768px) {
+  .contact {
+    flex-direction: column;
+  }
+}
