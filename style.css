@@ -170,7 +170,7 @@ p {
   font-size: 1.1rem;
 }
 
-/* =========================================
+/* ========================================
    ANIMATIONS
 ========================================= */
 @keyframes fadeInUp {
@@ -194,6 +194,8 @@ p {
 }
 
 /* =========================================
+=======
+>>>>>>> d2274e2ca8ef8bcc435ffe38e6fffa330fd660de
    SEÇÕES GERAIS (about, cards, gallery)
 ========================================= */
 section {
@@ -218,7 +220,7 @@ section h2 {
 }
 
 .about p {
-  text-align: left;
+  text-align: justify;
 }
 
 .about::after {
